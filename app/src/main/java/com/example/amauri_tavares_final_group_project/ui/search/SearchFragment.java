@@ -21,7 +21,6 @@ import android.widget.TextView;
 import com.example.amauri_tavares_final_group_project.R;
 import com.example.amauri_tavares_final_group_project.databinding.FragmentSearchBinding;
 import com.example.amauri_tavares_final_group_project.ui.SelectListener;
-import com.example.amauri_tavares_final_group_project.ui.home.HomeFragmentDirections;
 import com.example.amauri_tavares_final_group_project.ui.home.HomeViewModel;
 
 import java.util.ArrayList;
@@ -96,21 +95,21 @@ public class SearchFragment extends Fragment implements SelectListener {
 
         myModelList = new ArrayList<>();
         myModelList.add(new HouseSearchModel("Waterloo","3 rooms"," 108 University Ave, Waterloo, ON N2J 2W2",houseImages[0],"1000000"));
-        myModelList.add(new HouseSearchModel("Waterloo","3 rooms"," 108 University Ave, Waterloo, ON N2J 2W2",houseImages[1],"1000000"));
-        myModelList.add(new HouseSearchModel("Waterloo","3 rooms"," 108 University Ave, Waterloo, ON N2J 2W2",houseImages[2],"1000000"));
+        myModelList.add(new HouseSearchModel("Kitchener","3 rooms"," 108 University Ave, Waterloo, ON N2J 2W2",houseImages[1],"1000000"));
+        myModelList.add(new HouseSearchModel("Cambridge","3 rooms"," 108 University Ave, Waterloo, ON N2J 2W2",houseImages[2],"1000000"));
         myModelList.add(new HouseSearchModel("Waterloo","3 rooms"," 108 University Ave, Waterloo, ON N2J 2W2",houseImages[3],"1000000"));
-        myModelList.add(new HouseSearchModel("Waterloo","3 rooms"," 108 University Ave, Waterloo, ON N2J 2W2",houseImages[1],"1000000"));
+        myModelList.add(new HouseSearchModel("Kitchener","3 rooms"," 108 University Ave, Waterloo, ON N2J 2W2",houseImages[1],"1000000"));
         myModelList.add(new HouseSearchModel("Waterloo","3 rooms"," 108 University Ave, Waterloo, ON N2J 2W2",houseImages[0],"1000000"));
-        myModelList.add(new HouseSearchModel("Waterloo","3 rooms"," 108 University Ave, Waterloo, ON N2J 2W2",houseImages[1],"1000000"));
+        myModelList.add(new HouseSearchModel("Cambridge","3 rooms"," 108 University Ave, Waterloo, ON N2J 2W2",houseImages[1],"1000000"));
         customAdapter = new CustomAdapter(getContext(), myModelList, this);
         recyclerView.setAdapter(customAdapter);
     }
 
     @Override
     public void onItemClicked(HouseSearchModel myModel) {
-
-       // action = HomeFragmentDirections.actionNavigationHomeToNavigationSearch();
-      //  navController.navigate(action);
+//        action = SearchFragmentDirections.actionNavigationSearchToDetailsFragment("Ze Pequeno, ON N2J 2W2","1000000","Rio Grande DO SUl ");
+        action = SearchFragmentDirections.actionNavigationSearchToDetailsFragment(myModel.getAddress(),myModel.getPrice(),myModel.getCity(),myModel.getImgHouse());
+        navController.navigate(action);
 
     }
 }

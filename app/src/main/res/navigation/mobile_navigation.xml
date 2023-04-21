@@ -11,8 +11,8 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_navigation_home_to_navigation_search"
-            app:destination="@id/navigation_search" />
+            android:id="@+id/action_navigation_home_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
     </fragment>
 
     <fragment
@@ -30,10 +30,32 @@
         android:id="@+id/navigation_search"
         android:name="com.example.amauri_tavares_final_group_project.ui.search.SearchFragment"
         android:label="@string/title_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_navigation_search_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_favorites"
         android:name="com.example.amauri_tavares_final_group_project.ui.favorites.FavoritesFragment"
         android:label="@string/title_favorites"
         tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.amauri_tavares_final_group_project.ui.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="addressArg"
+            app:argType="string" />
+        <argument
+            android:name="priceArg"
+            app:argType="string" />
+        <argument
+            android:name="cityArg"
+            app:argType="string" />
+        <argument
+            android:name="imageService"
+            app:argType="integer" />
+    </fragment>
 </navigation>
