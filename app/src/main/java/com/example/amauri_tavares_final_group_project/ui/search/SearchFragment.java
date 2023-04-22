@@ -82,7 +82,6 @@ public class SearchFragment extends Fragment implements SelectListener {
         }
     }
     private void displayItems(View view) {
-
         recyclerView = view.findViewById(R.id.recycler_main);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),1));

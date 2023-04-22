@@ -57,13 +57,12 @@ tools:context=".ui.details.DetailsFragment">
             android:textSize="18sp"></TextView>
 
         <Button
-            android:id="@+id/houseBtn1"
+            android:id="@+id/addFvoriteBtn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:enabled="true"
-            android:text="Add"
-            />
+            android:text="+ Favorite" />
     </LinearLayout>
 
 

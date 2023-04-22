@@ -39,7 +39,11 @@
         android:id="@+id/navigation_favorites"
         android:name="com.example.amauri_tavares_final_group_project.ui.favorites.FavoritesFragment"
         android:label="@string/title_favorites"
-        tools:layout="@layout/fragment_favorites" />
+        tools:layout="@layout/fragment_favorites" >
+        <action
+            android:id="@+id/action_navigation_favorites_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.example.amauri_tavares_final_group_project.ui.details.DetailsFragment"
